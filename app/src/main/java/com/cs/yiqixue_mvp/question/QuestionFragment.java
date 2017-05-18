@@ -48,7 +48,9 @@ public class QuestionFragment extends Fragment implements View.OnClickListener, 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mQuestionList = mPresenter.initQuestionData();
+        if (mQuestionList == null) {
+            mQuestionList = mPresenter.initQuestionData();
+        }
         if (mQuestionAdapter == null) {
             mQuestionAdapter = new QuestionAdapter(mQuestionList);
         }
