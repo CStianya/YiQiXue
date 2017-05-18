@@ -4,14 +4,14 @@ package com.cs.yiqixue_mvp.bean;
  * Created by CSLaker on 2017/3/25.
  */
 
-public class Replay {
+public class Comment {
 
     private String mUser;
     private String mContens;
     private String mTime;
     private int mLikeNumbers;
 
-    public Replay() {}
+    public Comment() {}
 
     public String getContens() {
         return mContens;

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_answer_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_user_16dp"
+        android:drawablePadding="8dp"
+        android:textStyle="bold"
+        android:text="@string/user2_name" />
+
+    <TextView
+        android:id="@+id/tv_answer_contents"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/tv_answer_user"
+        android:text="@string/question_contents2"/>
+
+    <TextView
+        android:id="@+id/tv_answer_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_like_red_16dp"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/like_number"
+        android:layout_below="@+id/tv_answer_contents" />
+
+    <TextView
+        android:id="@+id/tv_answer_replay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_replay_16dp"
+        android:drawablePadding="8dp"
+        android:text="@string/replay_number"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/tv_answer_contents"
+        android:layout_toRightOf="@id/tv_answer_like"
+        android:layout_alignBaseline="@+id/tv_answer_like"/>
+
+    <TextView
+        android:id="@+id/tv_answer_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/time"
+        android:layout_alignBaseline="@+id/tv_answer_replay"
+        android:layout_alignBottom="@+id/tv_answer_replay"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+</RelativeLayout>
