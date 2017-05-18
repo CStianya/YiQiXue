@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.mvp.addquestion;
+package com.cs.yiqixue_mvp.home.addquestion;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.cs.yiqixue_mvp.R;
-import com.cs.yiqixue_mvp.common.BaseActivity;
+import com.cs.yiqixue_mvp.base.BaseActivity;
 
 
 /**

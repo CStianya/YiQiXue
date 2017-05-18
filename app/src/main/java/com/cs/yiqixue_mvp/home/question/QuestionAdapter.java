@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.mvp.question;
+package com.cs.yiqixue_mvp.home.question;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.common;
+package com.cs.yiqixue_mvp.base;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;

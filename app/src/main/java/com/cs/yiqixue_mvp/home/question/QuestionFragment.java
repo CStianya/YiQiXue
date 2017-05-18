@@ -1,5 +1,6 @@
-package com.cs.yiqixue_mvp.mvp.question;
+package com.cs.yiqixue_mvp.home.question;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Question;
+import com.cs.yiqixue_mvp.home.addquestion.AddQuestionActivity;
 
 import java.util.List;
 
@@ -20,15 +22,15 @@ import java.util.List;
  * Created by CSLaker on 2017/3/24.
  */
 
-public class QuestionFragment extends Fragment implements View.OnClickListener, QuestionContrat.View {
+public class QuestionFragment extends Fragment implements View.OnClickListener, QuestionContract.View {
 
     private static QuestionFragment fragment;
-    private QuestionContrat.Presenter mPresenter;
+    private QuestionContract.Presenter mPresenter;
     private List<Question> mQuestionList;
     private QuestionAdapter mQuestionAdapter;
 
     private RecyclerView mRecyclerView;
-    private ImageButton mNewQuestion;
+    private ImageButton mAddQuestion;
     private SwipeRefreshLayout mSwipeRefresh;
 
     public QuestionFragment(){}
@@ -70,7 +72,7 @@ public class QuestionFragment extends Fragment implements View.OnClickListener, 
     }
 
     public void initView(View view) {
-        mNewQuestion = (ImageButton) view.findViewById(R.id.fab_new_question);
+        mAddQuestion = (ImageButton) view.findViewById(R.id.fab_new_question);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
@@ -82,7 +84,7 @@ public class QuestionFragment extends Fragment implements View.OnClickListener, 
     }
 
     public void setListener() {
-        mNewQuestion.setOnClickListener(this);
+        mAddQuestion.setOnClickListener(this);
 
         mSwipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -96,11 +98,15 @@ public class QuestionFragment extends Fragment implements View.OnClickListener, 
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fab_new_question: {
+                Intent intent = new Intent(getActivity(), AddQuestionActivity.class);
+                startActivity(intent);
+                break;
             }
+            default:break;
         }
     }
 
-    public void setPresenter(QuestionContrat.Presenter presenter) {
+    public void setPresenter(QuestionContract.Presenter presenter) {
         mPresenter = presenter;
     }
 

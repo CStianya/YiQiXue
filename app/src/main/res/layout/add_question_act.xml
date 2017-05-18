@@ -31,7 +31,7 @@
             android:textColorHint="@color/colorHint">
 
             <EditText
-                android:id="@+id/et_new_ques_title"
+                android:id="@+id/et_add_ques_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_title"
@@ -46,7 +46,7 @@
             android:textColorHint="@color/colorHint">
 
             <EditText
-                android:id="@+id/et_new_ques_contents"
+                android:id="@+id/et_add_ques_contents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/prompt_contents"
@@ -58,7 +58,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <ImageButton
-            android:id="@+id/ib_new_ques"
+            android:id="@+id/ib_add_ques"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginTop="@dimen/dp_8"

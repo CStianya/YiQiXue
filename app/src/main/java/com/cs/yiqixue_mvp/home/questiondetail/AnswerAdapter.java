@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.mvp.questiondetail;
+package com.cs.yiqixue_mvp.home.questiondetail;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Answer;
-import com.cs.yiqixue_mvp.utils.MyApplication;
 
 import java.util.List;
 
@@ -72,14 +71,14 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.ViewHolder
             Intent intent;
             switch (v.getId()) {
                 case R.id.tv_answer_replay:
-                    intent = new Intent(MyApplication.getContext(), ReplayActivity.class);
+/*                    intent = new Intent(MyApplication.getContext(), ReplayActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    MyApplication.getContext().startActivity(intent);
+                    MyApplication.getContext().startActivity(intent);*/
                     break;
                 case R.id.tv_answer_contents:
-                    intent = new Intent(MyApplication.getContext(), AnswerInfoActivity.class);
+/*                    intent = new Intent(MyApplication.getContext(), AnswerInfoActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    MyApplication.getContext().startActivity(intent);
+                    MyApplication.getContext().startActivity(intent);*/
                     break;
             }
         }

@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.mvp.model;
+package com.cs.yiqixue_mvp.model;
 
 import com.cs.yiqixue_mvp.bean.Question;
 
@@ -13,5 +13,4 @@ public interface IQuestionModel {
     List<Question> initData();
 
     List<Question> getRefreshedData();
-
 }

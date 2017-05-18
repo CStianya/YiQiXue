@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.cs.yiqixue_mvp.common;
+package com.cs.yiqixue_mvp.base;
 
-public interface BaseView<T> {
+public interface BasePresenter {
 
-    void setPresenter(T presenter);
+    void start();
 
 }
