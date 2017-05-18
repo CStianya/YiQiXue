@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.question;
+package com.cs.yiqixue_mvp.mvp.question;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,8 +13,8 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.common.BaseActivity;
-import com.cs.yiqixue_mvp.game.GameFragment;
-import com.cs.yiqixue_mvp.user.UserFragment;
+import com.cs.yiqixue_mvp.mvp.game.GameFragment;
+import com.cs.yiqixue_mvp.mvp.user.UserFragment;
 
 import java.util.ArrayList;
 

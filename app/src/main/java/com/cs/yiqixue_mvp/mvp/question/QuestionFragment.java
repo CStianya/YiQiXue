@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.question;
+package com.cs.yiqixue_mvp.mvp.question;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Question;
-import com.cs.yiqixue_mvp.utils.LogUtil;
 
 import java.util.List;
 

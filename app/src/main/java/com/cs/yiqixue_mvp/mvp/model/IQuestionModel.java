@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.model;
+package com.cs.yiqixue_mvp.mvp.model;
 
 import com.cs.yiqixue_mvp.bean.Question;
 

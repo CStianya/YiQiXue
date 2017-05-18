@@ -1,12 +1,9 @@
-package com.cs.yiqixue_mvp.question;
-
-import android.support.v4.app.Fragment;
+package com.cs.yiqixue_mvp.mvp.question;
 
 import com.cs.yiqixue_mvp.bean.Question;
 import com.cs.yiqixue_mvp.common.BasePresenter;
 import com.cs.yiqixue_mvp.common.BaseView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

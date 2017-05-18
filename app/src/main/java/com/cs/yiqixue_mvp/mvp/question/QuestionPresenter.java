@@ -1,10 +1,10 @@
-package com.cs.yiqixue_mvp.question;
+package com.cs.yiqixue_mvp.mvp.question;
 
 import android.os.Handler;
 
 import com.cs.yiqixue_mvp.bean.Question;
-import com.cs.yiqixue_mvp.model.IQuestionModel;
-import com.cs.yiqixue_mvp.model.QuestionModel;
+import com.cs.yiqixue_mvp.mvp.model.IQuestionModel;
+import com.cs.yiqixue_mvp.mvp.model.QuestionModel;
 
 import java.util.List;
 
