@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">YiQiXue-MVP</string>
+    <string name="app_name">易起学</string>
+    <string name="question_title">如何证明：可导一定连续，连续不一定可导？</string>
+    <string name="question_contents1">可导一定连续,连续不一定可导 \n\n证明：\n\n
+        （1）可导一定连续 \n设y=f(x)在x0处可导,f\'(x0)=A 由可导的充分必要条件有 f(x)=f(x0)+A(x-x0)+o（│x-x0│）当x→x0时,f(x)=f(x0)+o（│x-x0│）\n\n
+        （2）再由定理：当x→x0时,f(x)→A的充分必要条件是f(x)=A+a(a是x→x0时的无穷小）得,limf(x)=f(x0)</string>
+    <string name="user1_name">陈火</string>
+    <string name="user2_name">华仔</string>
+    <string name="like_number">999</string>
+    <string name="replay_number">1324</string>
+    <string name="collect">收藏</string>
+    <string name="replay">回答</string>
+    <string name="subjects_name">公共基础课：高等数学</string>
+    <string name="question_contents2">(1）可导一定连续 设y=f(x)在x0处可导,f\'(x0)=A由可导的充分必要条件有f(x)=f(x0)+A(x-x0)+o（│x-x0│）,当x→x0时,f(x)=f(x0)+o（│x-x0│）(2）再…</string>
+    <string name="prompt_title">标题</string>
+    <string name="prompt_contents">内容</string>
+    <string name="answer_number">123个回答</string>
+    <string name="time">2017-01-01</string>
+    <string name="comments">这答案厉害了！谁写的这么棒！</string>
+
+    <string-array name="sorts">
+        <item>默认排序</item>
+        <item>评论时间</item>
+        <item>点赞数</item>
+        <item>回复数</item>
+    </string-array>
+
 </resources>

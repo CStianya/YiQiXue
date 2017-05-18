@@ -3,6 +3,7 @@ package com.cs.yiqixue_mvp.utils;
 import android.os.Handler;
 import android.os.Looper;
 
+import com.cs.yiqixue_mvp.common.BaseCallback;
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
 import com.squareup.okhttp.Callback;

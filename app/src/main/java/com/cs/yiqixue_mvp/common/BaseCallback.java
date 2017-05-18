@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp;
+package com.cs.yiqixue_mvp.common;
 
 /**
  * Created by CS on 2017/5/14.

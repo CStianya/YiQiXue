@@ -1,6 +1,5 @@
-package com.cs.yiqixue_mvp;
+package com.cs.yiqixue_mvp.common;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Build;
@@ -49,7 +48,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
         initView(mContextView);
         setListener();
-        doBusiness(this);
+
     }
 
     /**
@@ -112,15 +111,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
      * [View点击]
      */
     public abstract void widgetClick(View v);
-
-    /**
-     * [业务操作]
-     *
-     * @param mContext
-     */
-    public abstract void doBusiness(Context mContext);
-
-
 
     /**
      * [页面跳转]
