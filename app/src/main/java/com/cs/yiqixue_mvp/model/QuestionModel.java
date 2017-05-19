@@ -13,11 +13,13 @@ import java.util.Random;
 public class QuestionModel implements IQuestionModel {
 
     private List<Question> questionList;
-    private Question[] questions = new Question[3];
+
+    private Question[] questions;
 
     @Override
     public List<Question> initData() {
         questionList = new ArrayList<>();
+        questions = new Question[3];
 
         questions[0] = new Question();
         questions[0].setSubject("公共基础：高等数学");

@@ -1,10 +1,8 @@
-package com.cs.yiqixue_mvp.home.questiondetail;
+package com.cs.yiqixue_mvp.home.answer;
 
 import com.cs.yiqixue_mvp.base.BasePresenter;
 import com.cs.yiqixue_mvp.base.BaseView;
 import com.cs.yiqixue_mvp.bean.Answer;
-import com.cs.yiqixue_mvp.bean.Question;
-import com.cs.yiqixue_mvp.home.question.QuestionContract;
 
 import java.util.List;
 
@@ -18,7 +16,7 @@ public interface AnswerContract {
 
         void setAnswerList(List<Answer> questionList);
 
-        void showShare();
+        void showRefreshedData();
     }
 
     interface Presenter extends BasePresenter {

@@ -1,4 +1,4 @@
-package com.cs.yiqixue_mvp.home.questiondetail;
+package com.cs.yiqixue_mvp.home.answer;
 
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;

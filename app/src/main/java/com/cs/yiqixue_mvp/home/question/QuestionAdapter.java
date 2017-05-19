@@ -1,5 +1,6 @@
 package com.cs.yiqixue_mvp.home.question;
 
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,8 @@ import android.widget.TextView;
 
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Question;
+import com.cs.yiqixue_mvp.home.answer.AnswerActivity;
+import com.cs.yiqixue_mvp.utils.MyApplication;
 
 import java.util.List;
 
@@ -63,7 +66,9 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
 
         @Override
         public void onClick(View v) {
-
+            Intent intent = new Intent(MyApplication.getContext(), AnswerActivity.class);
+            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            MyApplication.getContext().startActivity(intent);
         }
     }
 

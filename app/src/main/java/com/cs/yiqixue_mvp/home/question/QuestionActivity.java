@@ -24,7 +24,7 @@ public class QuestionActivity extends BaseActivity implements BottomNavigationBa
 
     @Override
     public void initData(Bundle parms) {
-
+        new QuestionPresenter(QuestionFragment.newInstance("学习广场"));
     }
 
     @Override
@@ -50,7 +50,6 @@ public class QuestionActivity extends BaseActivity implements BottomNavigationBa
         setDefaultFragment();
         bottomNavigationBar.setTabSelectedListener(this);
 
-        new QuestionPresenter(QuestionFragment.newInstance("学习广场"));
         fragments = getFragments();
     }
 

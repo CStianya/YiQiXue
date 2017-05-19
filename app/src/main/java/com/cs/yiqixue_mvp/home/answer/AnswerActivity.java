@@ -1,6 +1,5 @@
-package com.cs.yiqixue_mvp.home.questiondetail;
+package com.cs.yiqixue_mvp.home.answer;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,18 +12,9 @@ import android.widget.TextView;
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Answer;
 import com.cs.yiqixue_mvp.base.BaseActivity;
-import com.cs.yiqixue_mvp.home.question.QuestionContract;
-import com.cs.yiqixue_mvp.utils.LogUtil;
 import com.cs.yiqixue_mvp.utils.RecyclerViewDivider;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import io.reactivex.Observable;
-import io.reactivex.android.schedulers.AndroidSchedulers;
-import io.reactivex.annotations.NonNull;
-import io.reactivex.functions.Consumer;
-import io.reactivex.schedulers.Schedulers;
 
 /**
  * Created by CSLaker on 2017/5/2.
@@ -40,8 +30,9 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
 
     @Override
     public void initData(Bundle parms) {
+        mPresenter = new AnswerPresenter(this);
         if (mAnswerList == null) {
-            initDatas();
+            mAnswerList = mPresenter.initAnswerData();
         }
         if (mAnswerAdapter == null) {
             mAnswerAdapter = new AnswerAdapter(mAnswerList);
@@ -84,61 +75,10 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
         }
     }
 
-    private void initDatas() {
-        mAnswerList = new ArrayList<>();
-        Answer answer1 = new Answer();
-        answer1.setUser("华仔");
-        answer1.setContens("可导一定连续,连续不一定可导  证明：（1）可导一定连续  设y=f(x)在x0处可导,f'(x0)=A  由可导的充分必要条件有  f(x)=f(x0)+A(x-x0)+o（│...");
-        answer1.setTime("2017-01-01");
-        answer1.setReplayNumbers(66);
-        answer1.setLikeNumbers(999);
-        mAnswerList.add(answer1);
-
-/*        Answer answer2 = new Answer();
-        answer2.setUser("隔壁老王");
-        answer2.setContens("因为函数可导,根据可导的定义有\n" +
-                "limΔy/Δx=A (Δx趋向于0)\n" +
-                "所以\n" +
-                "Δy/Δx=A+α (α是Δx趋向于0时的无穷小)\n" +
-                "从而\n" +
-                "Δy=AΔx+αΔx\n" +
-                "当Δx趋向于0时,显然limΔy=0\n" +
-                "由连续定义有\n" +
-                "函数连续.\n" +
-                "连续未必可导,比如y=|x|在x=0处连续,但左导数=-1,右导数=1,不可导.");
-        answer2.setTime("2017-05-02");
-        answer2.setReplayNumbers(30);
-        answer2.setLikeNumbers(454);
-        mAnswerList.add(answer2);
-
-        Answer answer3 = new Answer();
-        answer3.setUser("李紧");
-        answer3.setContens("因为函数可导,根据可导的定义有\n" +
-                "limΔy/Δx=A (Δx趋向于0)。所以\n" +
-                "Δy/Δx=A+α (α是Δx趋向于0时的无穷小)。从而\n" +
-                "Δy=AΔx+αΔx\n" +
-                "当Δx趋向于0时,显然limΔy=0\n" +
-                "由连续定义有：函数连续.\n" +
-                "连续未必可导,比如y=|x|在x=0处连续,但左导数=-1,右导数=1,不可导.");
-        answer3.setTime("2017-05-02");
-        answer3.setReplayNumbers(30);
-        answer3.setLikeNumbers(454);
-        mAnswerList.add(answer3);*/
-        for (int i = 0; i < 10; i ++) {
-            mAnswerList.add(answer1);
-        }
-    }
-
-    private void refreshDatasOnRxJava() {
-        Observable.just(1, 2, 3)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<Integer>() {
-                    @Override
-                    public void accept(@NonNull Integer integer) throws Exception {
-                        LogUtil.d("" + integer);
-                    }
-                });
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPresenter.start();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -161,7 +101,7 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
                 showShare();
                 break;
             case R.id.ab_more:
-                refreshDatasOnRxJava();
+                mPresenter.refreshAnswerData();
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -178,8 +118,13 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
     }
 
     @Override
-    public void showShare() {
-        /*        OnekeyShare oks = new OnekeyShare();
+    public void showRefreshedData() {
+        mAnswerAdapter.notifyDataSetChanged();
+        showToast("刷新成功");
+    }
+
+    private void showShare() {
+        /* OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
         oks.disableSSOWhenAuthorize();
         // title标题，印象笔记、邮箱、信息、微信、人人网、QQ和QQ空间使用
