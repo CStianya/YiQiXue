@@ -67,7 +67,6 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(MyApplication.getContext(), AnswerActivity.class);
-            //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             MyApplication.getContext().startActivity(intent);
         }
     }

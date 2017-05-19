@@ -100,7 +100,7 @@
                     android:background="@color/dividerColor"/>
 
                 <TextView
-                    android:id="@+id/tv_new_answer"
+                    android:id="@+id/tv_add_answer"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

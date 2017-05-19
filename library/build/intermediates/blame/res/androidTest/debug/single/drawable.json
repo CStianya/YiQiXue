@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_top.xml",
+        "source": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_top.xml"
+    },
+    {
+        "merged": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ssdk_oks_classic_platform_cell_back.xml",
+        "source": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\ssdk_oks_classic_platform_cell_back.xml"
+    },
+    {
+        "merged": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\indicator_bg_bottom.xml",
+        "source": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\indicator_bg_bottom.xml"
+    },
+    {
+        "merged": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\ssdk_oks_classic_progressbar.xml",
+        "source": "F:\\AndroidPro\\MVP\\YiQiXue-MVP\\library\\build\\intermediates\\bundles\\debug\\res\\drawable\\ssdk_oks_classic_progressbar.xml"
+    }
+]

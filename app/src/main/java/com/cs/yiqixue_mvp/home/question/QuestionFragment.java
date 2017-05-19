@@ -26,8 +26,8 @@ public class QuestionFragment extends Fragment implements View.OnClickListener, 
 
     private static QuestionFragment fragment;
     private QuestionContract.Presenter mPresenter;
-    private List<Question> mQuestionList;
     private QuestionAdapter mQuestionAdapter;
+    private List<Question> mQuestionList;
 
     private RecyclerView mRecyclerView;
     private ImageButton mAddQuestion;

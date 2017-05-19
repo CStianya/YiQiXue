@@ -12,9 +12,12 @@ import android.widget.TextView;
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Answer;
 import com.cs.yiqixue_mvp.base.BaseActivity;
+import com.cs.yiqixue_mvp.home.addanswer.AddAnswerActivity;
 import com.cs.yiqixue_mvp.utils.RecyclerViewDivider;
 
 import java.util.List;
+
+import cn.sharesdk.onekeyshare.OnekeyShare;
 
 /**
  * Created by CSLaker on 2017/5/2.
@@ -26,7 +29,7 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
     private AnswerAdapter mAnswerAdapter;
     private List<Answer> mAnswerList;
 
-    private TextView mAnswerTV;
+    private TextView mAddAnswerTV;
 
     @Override
     public void initData(Bundle parms) {
@@ -58,19 +61,19 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
         mRecyclerView.addItemDecoration(RecyclerViewDivider.getInstance());
         mRecyclerView.setAdapter(mAnswerAdapter);
 
-        mAnswerTV = $(R.id.tv_new_answer);
+        mAddAnswerTV = $(R.id.tv_add_answer);
     }
 
     @Override
     public void setListener() {
-        mAnswerTV.setOnClickListener(this);
+        mAddAnswerTV.setOnClickListener(this);
     }
 
     @Override
     public void widgetClick(View v) {
         switch (v.getId()) {
-            case R.id.tv_new_answer:
-                //startActivity(NewAnswerActivity.class);
+            case R.id.tv_add_answer:
+                startActivity(AddAnswerActivity.class);
                 break;
         }
     }
@@ -124,7 +127,7 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
     }
 
     private void showShare() {
-        /* OnekeyShare oks = new OnekeyShare();
+        OnekeyShare oks = new OnekeyShare();
         //关闭sso授权
         oks.disableSSOWhenAuthorize();
         // title标题，印象笔记、邮箱、信息、微信、人人网、QQ和QQ空间使用
@@ -147,6 +150,6 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
         oks.setSiteUrl("http://sharesdk.cn");
 
         // 启动分享GUI
-        oks.show(this);*/
+        oks.show(this);
     }
 }

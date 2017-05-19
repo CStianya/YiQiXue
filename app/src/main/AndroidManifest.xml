@@ -18,6 +18,9 @@
         </activity>
         <activity android:name=".home.addquestion.AddQuestionActivity"></activity>
         <activity android:name=".home.answer.AnswerActivity"></activity>
+        <activity android:name=".home.addanswer.AddAnswerActivity"></activity>
+        <activity android:name=".home.answerdetail.AnswerDetailActivity"></activity>
+        <activity android:name=".home.comment.CommentActivity"></activity>
     </application>
 
 </manifest>
