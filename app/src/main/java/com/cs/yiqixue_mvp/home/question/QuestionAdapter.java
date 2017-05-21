@@ -14,6 +14,8 @@ import com.cs.yiqixue_mvp.utils.MyApplication;
 
 import java.util.List;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 /**
  * Created by CSLaker on 2017/3/25.
  */
@@ -67,6 +69,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.ViewHo
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(MyApplication.getContext(), AnswerActivity.class);
+            intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
             MyApplication.getContext().startActivity(intent);
         }
     }

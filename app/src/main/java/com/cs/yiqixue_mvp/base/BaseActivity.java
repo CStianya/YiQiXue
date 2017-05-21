@@ -48,7 +48,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         }
         initView(mContextView);
         setListener();
-
     }
 
     /**

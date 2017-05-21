@@ -1,5 +1,6 @@
 package com.cs.yiqixue_mvp.user;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -7,19 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.cs.yiqixue_mvp.R;
+import com.cs.yiqixue_mvp.base.BaseFragment;
 
 /**
  * Created by CSLaker on 2017/3/24.
  */
 
-public class UserFragment extends Fragment {
+public class UserFragment extends BaseFragment {
 
     private static UserFragment fragment;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.user_frag, container, false);
-    }
 
     public UserFragment(){}
 
@@ -31,6 +29,36 @@ public class UserFragment extends Fragment {
         }
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void initData(Bundle parms) {
+
+    }
+
+    @Override
+    public int bindLayout() {
+        return R.layout.user_frag;
+    }
+
+    @Override
+    public void initView(View view) {
+
+    }
+
+    @Override
+    public void setListener() {
+
+    }
+
+    @Override
+    public void widgetClick(View v) {
+
+    }
+
+    @Override
+    public void doBusiness(Context mContext) {
+
     }
 
 }
