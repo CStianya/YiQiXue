@@ -23,13 +23,16 @@ import com.squareup.okhttp.Response;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Created by CSLaker on 2017/5/2.
  */
 
 public class CommentActivity extends BaseActivity implements CommentContract.View {
 
-    private CommentContract.Presenter mPresenter;
+    @Inject CommentPresenter mPresenter;
+
     private CommentAdapter mCommentAdapter;
     private List<Comment> mCommentList;
 
@@ -37,7 +40,9 @@ public class CommentActivity extends BaseActivity implements CommentContract.Vie
 
     @Override
     public void initData(Bundle parms) {
-        mPresenter = new CommentPresenter(this);
+        DaggerCommentComponent.builder()
+                .commentPresenterModule(new CommentPresenterModule(this)).build()
+                .inject(this);
         if (mCommentList == null) {
             mCommentList = mPresenter.initCommentData();
         }
@@ -150,7 +155,7 @@ public class CommentActivity extends BaseActivity implements CommentContract.Vie
     }
 
     @Override
-    public void setPresenter(CommentContract.Presenter presenter) {
+    public void setPresenter(CommentPresenter presenter) {
         mPresenter = presenter;
     }
 }

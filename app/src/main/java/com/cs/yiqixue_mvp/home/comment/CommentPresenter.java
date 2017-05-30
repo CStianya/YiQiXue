@@ -7,6 +7,8 @@ import com.cs.yiqixue_mvp.model.ICommentModel;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -23,6 +25,7 @@ public class CommentPresenter implements CommentContract.Presenter {
 
     ICommentModel mCommentModel;
 
+    @Inject
     public CommentPresenter(CommentContract.View commentView) {
         mCommentView = commentView;
         mCommentView.setPresenter(this);

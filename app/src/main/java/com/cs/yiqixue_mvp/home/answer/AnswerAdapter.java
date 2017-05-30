@@ -11,7 +11,7 @@ import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Answer;
 import com.cs.yiqixue_mvp.home.answerdetail.AnswerDetailActivity;
 import com.cs.yiqixue_mvp.home.comment.CommentActivity;
-import com.cs.yiqixue_mvp.utils.MyApplication;
+import com.cs.yiqixue_mvp.MyApplication;
 
 import java.util.List;
 

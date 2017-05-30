@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface CommentContract {
 
-    interface View extends BaseView<CommentContract.Presenter> {
+    interface View extends BaseView<CommentPresenter> {
 
         void setCommentList(List<Comment> commentList);
 

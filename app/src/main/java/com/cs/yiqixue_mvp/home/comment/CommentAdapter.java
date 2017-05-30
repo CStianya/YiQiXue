@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Comment;
-import com.cs.yiqixue_mvp.utils.MyApplication;
+import com.cs.yiqixue_mvp.MyApplication;
 
 import java.util.List;
 

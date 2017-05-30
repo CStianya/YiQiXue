@@ -6,6 +6,8 @@ import com.cs.yiqixue_mvp.model.IAnswerModel;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -22,6 +24,7 @@ public class AnswerPresenter implements AnswerContract.Presenter {
 
     IAnswerModel mAnswerModel;
 
+    @Inject
     public AnswerPresenter(AnswerContract.View answerView) {
         mAnswerView = answerView;
         answerView.setPresenter(this);

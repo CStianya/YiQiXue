@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface AnswerContract {
 
-    interface View extends BaseView<AnswerContract.Presenter> {
+    interface View extends BaseView<AnswerPresenter> {
 
         void setAnswerList(List<Answer> questionList);
 

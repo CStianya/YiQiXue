@@ -18,13 +18,19 @@ import com.cs.yiqixue_mvp.user.UserFragment;
 
 import java.util.ArrayList;
 
+import javax.inject.Inject;
+
 public class QuestionActivity extends BaseActivity implements BottomNavigationBar.OnTabSelectedListener {
+
+    @Inject QuestionPresenter mQuestionPresenter;
 
     private ArrayList<Fragment> fragments;
 
     @Override
     public void initData(Bundle parms) {
-        new QuestionPresenter(QuestionFragment.newInstance("学习广场"));
+        DaggerQuestionComponent.builder()
+                .questionPresenterModule(new QuestionPresenterModule(QuestionFragment.newInstance("学习广场"))).build()
+                .inject(this);
     }
 
     @Override

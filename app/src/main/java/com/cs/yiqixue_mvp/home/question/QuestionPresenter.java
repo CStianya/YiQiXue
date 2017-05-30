@@ -8,6 +8,8 @@ import com.cs.yiqixue_mvp.model.QuestionModel;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * Created by CS on 2017/5/18.
  */
@@ -18,6 +20,7 @@ public class QuestionPresenter implements QuestionContract.Presenter {
 
     IQuestionModel mQuestionModel;
 
+    @Inject
     public QuestionPresenter(QuestionContract.View questionView) {
         mQuestionView = questionView;
         mQuestionView.setPresenter(this);

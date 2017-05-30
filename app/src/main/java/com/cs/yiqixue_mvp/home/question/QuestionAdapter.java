@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.bean.Question;
 import com.cs.yiqixue_mvp.home.answer.AnswerActivity;
-import com.cs.yiqixue_mvp.utils.MyApplication;
+import com.cs.yiqixue_mvp.MyApplication;
 
 import java.util.List;
 

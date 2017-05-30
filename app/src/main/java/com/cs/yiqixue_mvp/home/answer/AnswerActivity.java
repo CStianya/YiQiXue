@@ -17,6 +17,8 @@ import com.cs.yiqixue_mvp.utils.RecyclerViewDivider;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import cn.sharesdk.onekeyshare.OnekeyShare;
 
 /**
@@ -25,7 +27,8 @@ import cn.sharesdk.onekeyshare.OnekeyShare;
 
 public class AnswerActivity extends BaseActivity implements AnswerContract.View {
 
-    private AnswerContract.Presenter mPresenter;
+    @Inject AnswerPresenter mPresenter;
+
     private AnswerAdapter mAnswerAdapter;
     private List<Answer> mAnswerList;
 
@@ -33,7 +36,9 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
 
     @Override
     public void initData(Bundle parms) {
-        mPresenter = new AnswerPresenter(this);
+        DaggerAnswerComponent.builder()
+                .answerPresenterModule(new AnswerPresenterModule(this)).build()
+                .inject(this);
         if (mAnswerList == null) {
             mAnswerList = mPresenter.initAnswerData();
         }
@@ -111,7 +116,7 @@ public class AnswerActivity extends BaseActivity implements AnswerContract.View 
     }
 
     @Override
-    public void setPresenter(AnswerContract.Presenter presenter) {
+    public void setPresenter(AnswerPresenter presenter) {
         mPresenter = presenter;
     }
 
