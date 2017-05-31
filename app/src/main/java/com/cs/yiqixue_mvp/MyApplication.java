@@ -3,6 +3,8 @@ package com.cs.yiqixue_mvp;
 import android.app.Application;
 import android.content.Context;
 
+import com.cs.yiqixue_mvp.api.APIService;
+
 /**
  * Created by CSLaker on 2017/5/2.
  */
@@ -14,6 +16,7 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         sContext = getApplicationContext();
+        APIService.init();
     }
 
     public static Context getContext() {

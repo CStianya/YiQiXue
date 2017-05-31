@@ -1,6 +1,6 @@
 package com.cs.yiqixue_mvp.model;
 
-import com.cs.yiqixue_mvp.bean.Question;
+import com.cs.yiqixue_mvp.api.bean.Question;
 
 import java.util.ArrayList;
 import java.util.List;

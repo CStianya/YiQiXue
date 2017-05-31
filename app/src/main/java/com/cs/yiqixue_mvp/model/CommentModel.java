@@ -1,6 +1,6 @@
 package com.cs.yiqixue_mvp.model;
 
-import com.cs.yiqixue_mvp.bean.Comment;
+import com.cs.yiqixue_mvp.api.bean.Comment;
 
 import java.util.ArrayList;
 import java.util.List;
