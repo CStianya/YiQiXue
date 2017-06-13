@@ -10,7 +10,7 @@ import android.widget.ListView;
 
 import com.cs.yiqixue_mvp.R;
 import com.cs.yiqixue_mvp.api.APIService;
-import com.cs.yiqixue_mvp.api.bean.WeatherBean;
+import com.cs.yiqixue_mvp.api.bean.User;
 import com.cs.yiqixue_mvp.base.BaseActivity;
 import com.cs.yiqixue_mvp.api.bean.Comment;
 import com.cs.yiqixue_mvp.utils.LogUtil;
@@ -137,13 +137,6 @@ public class CommentActivity extends BaseActivity implements CommentContract.Vie
                 this.finish();
                 break;
             case R.id.ab_edit:
-                APIService.getWeatherData("rot2enzrehaztkdk", "beijing")
-                        .subscribe(new Consumer<WeatherBean>() {
-                            @Override
-                            public void accept(@NonNull WeatherBean weatherBean) throws Exception {
-                                LogUtil.d(weatherBean.results.get(0).location.name, weatherBean.results.get(0).now.temperature + "" + "℃");
-                            }
-                        });
                 break;
         }
         return super.onOptionsItemSelected(item);

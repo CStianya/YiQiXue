@@ -1,9 +1,10 @@
 package com.cs.yiqixue_mvp.api;
 
 import com.cs.yiqixue_mvp.MyApplication;
-import com.cs.yiqixue_mvp.api.bean.WeatherBean;
+import com.cs.yiqixue_mvp.api.bean.Question;
 
 import java.io.File;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
@@ -21,7 +22,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIService {
 
-    private static final String BASE_URL = "https://api.thinkpage.cn";
+    private static final String BASE_URL = "http://10.0.2.2:80";
 
     private static final int TIME_OUT = 5;
 
@@ -51,10 +52,11 @@ public class APIService {
     }
 
     /**
-     * 请求天气数据
+     * 获取所有问题数据
+     * @return
      */
-    public static Observable<WeatherBean> getWeatherData(String key, String location) {
-        return sRetrofitService.getWeatherData(key, location)
+    public static Observable<List<Question>> getAllUsers() {
+        return sRetrofitService.getAllQuestions()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

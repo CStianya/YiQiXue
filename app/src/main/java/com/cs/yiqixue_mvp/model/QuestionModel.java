@@ -1,10 +1,15 @@
 package com.cs.yiqixue_mvp.model;
 
+import com.cs.yiqixue_mvp.api.APIService;
 import com.cs.yiqixue_mvp.api.bean.Question;
+import com.cs.yiqixue_mvp.utils.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 
 /**
  * Created by CS on 2017/5/18.
@@ -12,12 +17,37 @@ import java.util.Random;
 
 public class QuestionModel implements IQuestionModel {
 
-    private List<Question> questionList;
+    public static List<Question> questionList = new ArrayList<>();
 
     private Question[] questions;
 
+    public void setQuestionList(List<Question> questionList) {
+        this.questionList = questionList;
+    }
+
     @Override
     public List<Question> initData() {
+        APIService.getAllUsers()
+                .subscribe(new Consumer<List<Question>>() {
+                    @Override
+                    public void accept(@NonNull List<Question> questions) throws Exception {
+                        questionList = questions;
+                        LogUtil.d(questions.toString());
+                    }
+                });
+        return questionList;
+    }
+
+    @Override
+    public List<Question> getRefreshedData() {
+/*        questionList.clear();
+        for (int i = 0; i < 10; i ++) {
+            questionList.add(questions[new Random().nextInt(3)]);
+        }*/
+        return questionList;
+    }
+
+    private List<Question> getData() {
         questionList = new ArrayList<>();
         questions = new Question[3];
 
@@ -45,15 +75,6 @@ public class QuestionModel implements IQuestionModel {
         questions[2].setAnswerNumbers(9);
         questions[2].setLikeNumbers(40);
 
-        for (int i = 0; i < 10; i ++) {
-            questionList.add(questions[new Random().nextInt(3)]);
-        }
-        return questionList;
-    }
-
-    @Override
-    public List<Question> getRefreshedData() {
-        questionList.clear();
         for (int i = 0; i < 10; i ++) {
             questionList.add(questions[new Random().nextInt(3)]);
         }

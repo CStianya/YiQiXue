@@ -6,52 +6,62 @@ package com.cs.yiqixue_mvp.api.bean;
 
 public class Question {
 
-    private String mSubject;
-    private String mTitle;
-    private String mContens;
-    private int mAnswerNumbers;
-    private int mLikeNumbers;
+    private String subject;
+    private String title;
+    private String contens;
+    private int answerNumbers;
+    private int likeNumbers;
 
     public Question() {}
 
-    public String getContens() {
-        return mContens;
-    }
-
-    public void setContens(String contens) {
-        mContens = contens;
-    }
-
-    public String getTitle() {
-        return mTitle;
-    }
-
-    public void setTitle(String title) {
-        mTitle = title;
-    }
-
-    public int getAnswerNumbers() {
-        return mAnswerNumbers;
-    }
-
-    public void setAnswerNumbers(int answerNumbers) {
-        mAnswerNumbers = answerNumbers;
-    }
-
-    public int getLikeNumbers() {
-        return mLikeNumbers;
-    }
-
-    public void setLikeNumbers(int likeNumbers) {
-        mLikeNumbers = likeNumbers;
-    }
-
     public String getSubject() {
-        return mSubject;
+        return subject;
     }
 
     public void setSubject(String subject) {
-        mSubject = subject;
+        this.subject = subject;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getContens() {
+        return contens;
+    }
+
+    public void setContens(String contens) {
+        this.contens = contens;
+    }
+
+    public int getAnswerNumbers() {
+        return answerNumbers;
+    }
+
+    public void setAnswerNumbers(int answerNumbers) {
+        this.answerNumbers = answerNumbers;
+    }
+
+    public int getLikeNumbers() {
+        return likeNumbers;
+    }
+
+    public void setLikeNumbers(int likeNumbers) {
+        this.likeNumbers = likeNumbers;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "subject='" + subject + '\'' +
+                ", title='" + title + '\'' +
+                ", contens='" + contens + '\'' +
+                ", answerNumbers=" + answerNumbers +
+                ", likeNumbers=" + likeNumbers +
+                '}';
+    }
 }
